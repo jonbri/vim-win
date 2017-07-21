@@ -1,0 +1,41 @@
+*win.txt*  Windowing tweaks
+
+Author:  Jonathan Brink
+License: Same terms as Vim itself (see |license|)
+
+INTRODUCTION                                    *win*
+
+Mappings and commands to improve windowing support.
+
+                                                *win-<UP>
+<UP> Increase/Decrease window size vertically (depends on layout)
+
+                                                *win-<DOWN>
+<DOWN> Increase/Decrease window size vertically (depends on layout)
+
+                                                *win-<RIGHT>
+<RIGHT> Increase/Decrease window size horizontally (depends on layout)
+
+                                                *win-<LEFT>
+<LEFT> Increase/Decrease window size horizontally (depends on layout)
+
+                                                *win-O
+c-w-O Increase slightly current window size
+
+                                                *win-0
+c-w-0 Minimize other windows
+
+                                                *win-vsp
+vsp Vertical Split plus nowrap
+
+                                                *win-sp
+sp Horizontal Split plus nowrap
+
+
+ABOUT                                           *win-about*
+
+Grab the latest version or report a bug on GitHub:
+
+https://github.com/jonbri/vim-win
+
+ vim:tw=78:et:ft=help:norl:
