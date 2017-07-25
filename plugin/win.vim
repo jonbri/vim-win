@@ -21,13 +21,14 @@ endfunction
 nnoremap <C-w>0 :call CreepBigger()<CR>
 
 " prevent wrapping when opening a split
-function! WIN_VerticalSplit()
-  vsplit
-  setlocal nowrap
+" https://vi.stackexchange.com/q/12995/2312
+function! WrapIfSplit()
+  let cmdline = getcmdline()
+  if cmdline =~ '\v^vspl?i?t?$'
+    return "\<C-U>vsplit \<bar> set nowrap\<CR>"
+  elseif cmdline =~ '\v^spl?i?t?$'
+    return "\<C-U>split \<bar> set nowrap\<CR>"
+  endif
+  return "\<CR>"
 endfunction
-nnoremap <silent> :vsp :call WIN_VerticalSplit()<CR>
-function! WIN_HorizontalSplit()
-  split
-  setlocal nowrap
-endfunction
-nnoremap <silent> :sp :call WIN_HorizontalSplit()<CR>
+cnoremap <expr><silent> <CR> WrapIfSplit()
